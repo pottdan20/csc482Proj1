@@ -1,0 +1,1 @@
+Jonathan Blow's home page on the internet is a basic html document with some links to various talks, some by Richard Feynman, some by other game developers.

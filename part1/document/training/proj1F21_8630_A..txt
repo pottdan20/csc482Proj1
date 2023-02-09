@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+As a computer science major, I have great respect for Alan Turing, the "Father of Modern Computing." He is well known for his groundbreaking work establishing the foundations of computer science years before the first computer was ever created. Most of my computer science classes reference Alan Turing in some way, so I decided to take this opportunity to research his history. I found that Turing made massive breakthroughs in the fields of cryptology and artificial intelligence and aided in the Allies effort in World War II, however his life was cut short due to the homophobic laws of the time.
+ 
+One of Turing's well-known ideas is the Turing test. This test is a method of deciding if a computer is capable of human-like thought. Basically, if a computer can effectively appear as a human in conversation, it is said to pass the Turing test. The most incredible part of Turing's ideas is that he thought of all this before the first computer was ever made.
+ 
+In addition to his advances in the field of AI, Turing made strides in cryptology particularity in his WWII efforts. Turing is likely most famous for his code breaking work during the war where he was involved in breaking Nazi Germany's Enigma code. In doing this, he gave the British an unmistakable advantage that shortened the war and undoubtedly saved lives.
+ 
+Shortly after the war was over Turing entered a relationship with a man named Arnold Murray. When the police discovered this, Turing was arrested, charged with "gross indecency," and forced to be chemically castrated. As a result, he lost his security clearance to continue his cryptography work. After that, Alan Turing died apparently by suicide.
+ 
+One can only imagine the further advancements Turing could have made if he lived in a more accepting society. Despite his early death, Alan Turing made many critical advancements and paved the way for future computer science. He is truly deserving of the title "Father of Modern Computing."
+
+
+

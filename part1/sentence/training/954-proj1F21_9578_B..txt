@@ -1,0 +1,1 @@
+When firing, the GAU 8/A generates 44.5kN of thrust, this effectively halves the total thrust of the aircraft, as each of the A10s engines only produce 41kN of thrust.

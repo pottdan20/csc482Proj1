@@ -1,0 +1,1 @@
+This control board is what controls the amount of power given to the motor based on the throttle.
