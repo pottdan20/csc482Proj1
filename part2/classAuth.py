@@ -8,11 +8,15 @@ import os
 import random
 
 cmu = cmudict.dict()
+with open("./part2/DaleChallEasyWordList.txt") as f:
+    daleList = f.read().lower().split()
+
 
 class DataPoint:
     def __init__(self, label, raw):
         self.label = label
         self.raw = raw
+        self.features = {}
 
         paragraphs=raw.split("\n\n")
         sentences = nltk.tokenize.sent_tokenize(raw)
@@ -32,9 +36,19 @@ class DataPoint:
         PHW = gunningCount/len(syllableList)
         ASL=len(words)/len(sentences)
 
-
-        self.features = {}
-        self.features["ASL"]=round(ASL) #Average Sentence Length
+        daleCount=0 
+        for word in words:
+            if word not in daleList:
+                daleCount+=1
+        PDW = daleCount/len(words)
+        
+        if PDW < 0.05:
+            self.features["Dale"]= round((0.1579*PDW + 0.0496*ASL)*10)
+        else:
+            self.features["Dale"]=  round((0.1579*PDW + 0.0496*ASL + 3.6365)*10)
+        
+       
+        #self.features["ASL"]=round(ASL) #Average Sentence Length
         self.features["APL"]=round(len(sentences)/len(paragraphs)) #Average Paragraph Length
         
         self.features["AWC"]=round(nosw)
@@ -45,9 +59,10 @@ class DataPoint:
 
         self.features["lexicalComplexity"]= round((len(list(set(words)))/len(words))*10)
 
-        self.features["FleshScore"] = round(1.599*nosw - 1.015*ASL - 31.517)
+        self.features["FleshScore"] = -1*round(1.599*nosw - 1.015*ASL - 31.517)
         self.features["FleshKincade"] = round(0.39*ASL + 11.8*nosw - 15.59)
-        self.features["gunnongFog"] = round(0.4*(ASL + PHW))
+        self.features["gunningFog"] = round(0.4*(ASL + PHW))
+        #self.features["SMOG"] = round(0.4*(ASL + (gunningCount/len(syllableList))))
      
     def __repr__(self):
         return("Label: " + str(self.label) + 
@@ -104,11 +119,11 @@ def setUp():
     t = open("right.txt", "w")
     f = open("wrong.txt", "w")
     g = open("dataPoints.txt" , "w")
-    for all in documentsTraining:
+    for all in paragraphsTraining:
         g.write(str(all)+ " \n")
     g.close()
-    classifier = nltk.NaiveBayesClassifier.train(documentsTraining)
-    for (name, tag) in documentsTesting:
+    classifier = nltk.NaiveBayesClassifier.train(paragraphsTraining)
+    for (name, tag) in paragraphsTesting:
         
         guess = classifier.classify(name)
         
