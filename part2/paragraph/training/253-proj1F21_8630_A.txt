@@ -1,0 +1,1 @@
+One of Turing's well-known ideas is the Turing test. This test is a method of deciding if a computer is capable of human-like thought. Basically, if a computer can effectively appear as a human in conversation, it is said to pass the Turing test. The most incredible part of Turing's ideas is that he thought of all this before the first computer was ever made.
