@@ -1,0 +1,1 @@
+Another problem was to consider the number of sheep over time as a sequence, and how this would be affected by the groupings of sheep.

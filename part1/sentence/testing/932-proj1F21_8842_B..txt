@@ -1,0 +1,1 @@
+To install the board all you need to do is to pull the screws off the GPS box at the top of the handlebars, remove the GPS holder, unplug the control board which also contains the GPS, and then plug in your new $30 control board.

@@ -1,0 +1,1 @@
+All you really need to convert the old Lyft scooter itself to a personal one is a $30 control board that goes in a cavity at the top of the handlebars.

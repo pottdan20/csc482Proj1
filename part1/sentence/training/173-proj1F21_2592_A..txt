@@ -1,0 +1,1 @@
+The white paper explained the Bitcoin protocol which, put simply, is a decentralized database that can also process transactions between different users in the database.
