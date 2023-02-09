@@ -4,7 +4,50 @@ from urllib import request
 from zipfile import ZipFile
 from bs4 import BeautifulSoup   
 
-# test   
+def fetch_part2_document_training():
+    trainings = []
+    if os.path.exists("part2/document/training"):
+        for filename in os.listdir("part2/document/training"): 
+            html = open(os.path.join("part2/document/training", filename)).read()
+            raw = BeautifulSoup(html, 'html.parser').get_text()
+            trainings.append([filename,raw])
+    else:
+        return None
+    return trainings
+
+def fetch_part2_document_testing():
+    trainings = []
+    if os.path.exists("part2/document/testing"):
+        for filename in os.listdir("part2/document/testing"): 
+            html = open(os.path.join("part2/document/testing", filename)).read()
+            raw = BeautifulSoup(html, 'html.parser').get_text()
+            trainings.append([filename,raw])
+    else:
+        return None
+    return trainings 
+
+def fetch_part2_paragraph_training():
+    trainings = []
+    if os.path.exists("part2/paragraph/training"):
+        for filename in os.listdir("part2/paragraph/training"): 
+            html = open(os.path.join("part2/paragraph/training", filename)).read()
+            raw = BeautifulSoup(html, 'html.parser').get_text()
+            trainings.append([filename,raw])
+    else:
+        return None
+    return trainings
+
+def fetch_part2_paragraph_testing():
+    trainings = []
+    if os.path.exists("part2/paragraph/testing"):
+        for filename in os.listdir("part2/paragraph/testing"): 
+            html = open(os.path.join("part2/paragraph/testing", filename)).read()
+            raw = BeautifulSoup(html, 'html.parser').get_text()
+            trainings.append([filename,raw])
+    else:
+        return None
+    return trainings
+
 
 def fetch_part1_document_training():
     trainings = []
@@ -126,10 +169,13 @@ def part2(documents):
     x = 0
     for d in documents:
         a_id = d[0].split("_")[1]
-        if a_id not in authors.keys(): #maps each paragraph to an author
-            authors[a_id] = []
-        authors[a_id].append([str(x) + "-" + d[0], d[1]])
-        x += 1
+        for p in d[1].split("\n"):
+            if len(p) < 2:
+                continue
+            if a_id not in authors.keys(): #maps each paragraph to an author
+                authors[a_id] = []
+            authors[a_id].append([str(x) + "-" + d[0], p])
+            x += 1
 
     for a in authors.keys(): # 80:20 split of each authors writing
         i = int(0.8 * len(authors[a]))
@@ -156,7 +202,7 @@ def part2(documents):
 
 
 
-def fetch_and_separate_original_data():
+def fetch_and_separate_original_data(): #only run after deleting all previous data... after it is separated and saved, use getters
     zip_url = "http://users.csc.calpoly.edu/~foaad/proj1F21_files.zip"
     # Download zip file from url
     zip_response = request.urlopen(zip_url)
@@ -191,82 +237,72 @@ def fetch_and_separate_original_data():
     os.chdir("..")
     os.rmdir("./in_files_html")   
 
+    testingAndTraining = separate_training(documents) # returns [testing, training]
+    os.mkdir('./part1')
+    os.chdir("./part1")
+    os.mkdir("./document")
+    os.chdir("./document")
+    os.mkdir("./testing")
+    os.chdir("./testing")
+    write_to_folder(testingAndTraining[0]) #write testing to testing folder
+    os.chdir("../")
+    os.mkdir("./training")
+    os.chdir("./training")
+    write_to_folder( testingAndTraining[1])
+    os.chdir("../../../")
 
-
-    # testingAndTraining = separate_training(documents) # returns [testing, training]
-    # os.mkdir('./part1')
-    # os.chdir("./part1")
-    # os.mkdir("./document")
-    # os.chdir("./document")
-    # os.mkdir("./testing")
-    # os.chdir("./testing")
-    # write_to_folder(testingAndTraining[0]) #write testing to testing folder
-    # os.chdir("../")
-    # os.mkdir("./training")
-    # os.chdir("./training")
-    # write_to_folder( testingAndTraining[1])
-    # os.chdir("../../../")
-
-    # paragraphs = [] #separating paragraphs for testing and training data
-    # x = 0
-    # for doc in documents:
-    #     ps = doc[1].split('\n')
-    #     for p in ps:
-    #         if len(p) < 2:
-    #             ps.remove(p)
-    #         else:
-    #             paragraphs.append([str(x) +"-"+ doc[0], p])
-    #             x += 1
+    paragraphs = [] #separating paragraphs for testing and training data
+    x = 0
+    for doc in documents:
+        ps = doc[1].split('\n')
+        for p in ps:
+            if len(p) < 2:
+                ps.remove(p)
+            else:
+                paragraphs.append([str(x) +"-"+ doc[0], p])
+                x += 1
     
-    # testingAndTraining = separate_training(paragraphs)
+    testingAndTraining = separate_training(paragraphs)
     
-    # os.chdir("./part1")
-    # os.mkdir("./paragraph")
-    # os.chdir("./paragraph")
-    # os.mkdir("./testing")
-    # os.chdir("./testing")
-    # write_to_folder(testingAndTraining[0]) #write testing to testing folder
-    # os.chdir("../")
-    # os.mkdir("./training")
-    # os.chdir("./training")
-    # write_to_folder(testingAndTraining[1])
-    # os.chdir("../../../")
+    os.chdir("./part1")
+    os.mkdir("./paragraph")
+    os.chdir("./paragraph")
+    os.mkdir("./testing")
+    os.chdir("./testing")
+    write_to_folder(testingAndTraining[0]) #write testing to testing folder
+    os.chdir("../")
+    os.mkdir("./training")
+    os.chdir("./training")
+    write_to_folder(testingAndTraining[1])
+    os.chdir("../../../")
 
 
-    # sents = [] #separating sents for testing and training data
-    # x = 0
-    # for doc in documents:
-    #     tempSents = nltk.sent_tokenize(doc[1])
-    #     for s in tempSents:
-    #         if len(s) < 2:
-    #             tempSents.remove(p)
-    #         else:
-    #             sents.append([str(x) +"-"+ doc[0], s])
-    #             x += 1
+    sents = [] #separating sents for testing and training data
+    x = 0
+    for doc in documents:
+        tempSents = nltk.sent_tokenize(doc[1])
+        for s in tempSents:
+            if len(s) < 2:
+                tempSents.remove(p)
+            else:
+                sents.append([str(x) +"-"+ doc[0], s])
+                x += 1
     
-    # testingAndTraining = separate_training(sents)
+    testingAndTraining = separate_training(sents)
     
-    # os.chdir("./part1")
-    # os.mkdir("./sentence")
-    # os.chdir("./sentence")
-    # os.mkdir("./testing")
-    # os.chdir("./testing")
-    # write_to_folder(testingAndTraining[0]) #write testing to testing folder
-    # os.chdir("../")
-    # os.mkdir("./training")
-    # os.chdir("./training")
-    # write_to_folder(testingAndTraining[1])
-    # os.chdir("../../../")
+    os.chdir("./part1")
+    os.mkdir("./sentence")
+    os.chdir("./sentence")
+    os.mkdir("./testing")
+    os.chdir("./testing")
+    write_to_folder(testingAndTraining[0]) #write testing to testing folder
+    os.chdir("../")
+    os.mkdir("./training")
+    os.chdir("./training")
+    write_to_folder(testingAndTraining[1])
+    os.chdir("../../../")
     
     part2(documents)
 
 
         
-fetch_and_separate_original_data()
-
-# doc_train = fetch_part1_document_training()
-# par_train = fetch_part1_paragraph_training()
-# sent_train = fetch_part1_sentence_training()
-
-# print(sent_train[10])
-# print(sent_train[9])
