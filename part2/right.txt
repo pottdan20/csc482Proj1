@@ -1,0 +1,3 @@
+3453 3453 {'ASL': 22, 'APL': 5, 'AWC': 4, 'commasPerSentence': 9, 'lexicalComplexity': 5, 'FleshScore': -47, 'FleshKincade': 40, 'gunnongFog': 9}
+3647 3647 {'ASL': 22, 'APL': 3, 'AWC': 5, 'commasPerSentence': 14, 'lexicalComplexity': 5, 'FleshScore': -46, 'FleshKincade': 49, 'gunnongFog': 9}
+6728 6728 {'ASL': 23, 'APL': 3, 'AWC': 4, 'commasPerSentence': 12, 'lexicalComplexity': 5, 'FleshScore': -49, 'FleshKincade': 38, 'gunnongFog': 9}

@@ -1,0 +1,10 @@
+1794 3363 {'ASL': 22, 'APL': 3, 'AWC': 2, 'commasPerSentence': 15, 'lexicalComplexity': 5, 'FleshScore': -51, 'FleshKincade': 21, 'gunnongFog': 9}
+2422 3942 {'ASL': 15, 'APL': 8, 'AWC': 2, 'commasPerSentence': 6, 'lexicalComplexity': 4, 'FleshScore': -44, 'FleshKincade': 13, 'gunnongFog': 6}
+2509 4079 {'ASL': 15, 'APL': 3, 'AWC': 5, 'commasPerSentence': 5, 'lexicalComplexity': 5, 'FleshScore': -39, 'FleshKincade': 44, 'gunnongFog': 6}
+2605 6585 {'ASL': 15, 'APL': 3, 'AWC': 3, 'commasPerSentence': 8, 'lexicalComplexity': 5, 'FleshScore': -42, 'FleshKincade': 23, 'gunnongFog': 6}
+3618 9348 {'ASL': 23, 'APL': 2, 'AWC': 5, 'commasPerSentence': 3, 'lexicalComplexity': 6, 'FleshScore': -47, 'FleshKincade': 57, 'gunnongFog': 9}
+3928 6388 {'ASL': 15, 'APL': 4, 'AWC': 4, 'commasPerSentence': 5, 'lexicalComplexity': 6, 'FleshScore': -40, 'FleshKincade': 35, 'gunnongFog': 6}
+3942 6388 {'ASL': 17, 'APL': 6, 'AWC': 2, 'commasPerSentence': 6, 'lexicalComplexity': 4, 'FleshScore': -45, 'FleshKincade': 20, 'gunnongFog': 7}
+6737 3618 {'ASL': 25, 'APL': 2, 'AWC': 2, 'commasPerSentence': 13, 'lexicalComplexity': 5, 'FleshScore': -54, 'FleshKincade': 13, 'gunnongFog': 10}
+8842 4001 {'ASL': 24, 'APL': 6, 'AWC': 3, 'commasPerSentence': 10, 'lexicalComplexity': 4, 'FleshScore': -51, 'FleshKincade': 29, 'gunnongFog': 10}
+9578 3647 {'ASL': 22, 'APL': 4, 'AWC': 5, 'commasPerSentence': 13, 'lexicalComplexity': 5, 'FleshScore': -47, 'FleshKincade': 51, 'gunnongFog': 9}
