@@ -8,8 +8,8 @@ def fetch_part2_document_training():
     trainings = []
     if os.path.exists("part2/document/training"):
         for filename in os.listdir("part2/document/training"): 
-            html = open(os.path.join("part2/document/training", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part2/document/training", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -19,8 +19,8 @@ def fetch_part2_document_testing():
     trainings = []
     if os.path.exists("part2/document/testing"):
         for filename in os.listdir("part2/document/testing"): 
-            html = open(os.path.join("part2/document/testing", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part2/document/testing", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -30,8 +30,8 @@ def fetch_part2_paragraph_training():
     trainings = []
     if os.path.exists("part2/paragraph/training"):
         for filename in os.listdir("part2/paragraph/training"): 
-            html = open(os.path.join("part2/paragraph/training", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part2/paragraph/training", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -41,8 +41,8 @@ def fetch_part2_paragraph_testing():
     trainings = []
     if os.path.exists("part2/paragraph/testing"):
         for filename in os.listdir("part2/paragraph/testing"): 
-            html = open(os.path.join("part2/paragraph/testing", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part2/paragraph/testing", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -53,8 +53,8 @@ def fetch_part1_document_training():
     trainings = []
     if os.path.exists("part1/document/training"):
         for filename in os.listdir("part1/document/training"): 
-            html = open(os.path.join("part1/document/training", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part1/document/training", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -64,8 +64,8 @@ def fetch_part1_document_testing():
     trainings = []
     if os.path.exists("part1/document/testing"):
         for filename in os.listdir("part1/document/testing"): 
-            html = open(os.path.join("part1/document/testing", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part1/document/testing", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -75,8 +75,8 @@ def fetch_part1_paragraph_training():
     trainings = []
     if os.path.exists("part1/paragraph/training"):
         for filename in os.listdir("part1/paragraph/training"): 
-            html = open(os.path.join("part1/paragraph/training", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part1/paragraph/training", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -86,8 +86,8 @@ def fetch_part1_paragraph_testing():
     trainings = []
     if os.path.exists("part1/paragraph/testing"):
         for filename in os.listdir("part1/paragraph/testing"): 
-            html = open(os.path.join("part1/paragraph/testing", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part1/paragraph/testing", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -97,8 +97,8 @@ def fetch_part1_sentence_testing():
     trainings = []
     if os.path.exists("part1/sentence/testing"):
         for filename in os.listdir("part1/sentence/testing"): 
-            html = open(os.path.join("part1/sentence/testing", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
+            raw = open(os.path.join("part1/sentence/testing", filename)).read()
+           #raw = BeautifulSoup(html, 'html.parser').get_text()
             trainings.append([filename,raw])
     else:
         return None
@@ -108,9 +108,9 @@ def fetch_part1_sentence_training():
     trainings = []
     if os.path.exists("part1/sentence/training"):
         for filename in os.listdir("part1/sentence/training"): 
-            html = open(os.path.join("part1/sentence/training", filename)).read()
-            raw = BeautifulSoup(html, 'html.parser').get_text()
-            trainings.append([filename,raw])
+            raw = open(os.path.join("part1/sentence/training", filename)).read()
+            #raw = BeautifulSoup(html, 'html.parser').get_text()
+            trainings.append([filename,raw])            
     else:
         return None
     return trainings
