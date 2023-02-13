@@ -66,17 +66,18 @@ class DataPoint:
         #self.features["SMOG"] = round(0.4*(ASL + (gunningCount/len(syllableList))))
         
         # Common words as features 
-        for common_word in word_features: 
-            if common_word in set(words): 
-                self.features[common_word] = True 
-            else: 
-                self.features[common_word] = False 
-                
-        pos_list = ['NN', 'NNP', 'DT', 'IN', 'JJ', 'NNS', 'CC', 'MD']
-        tagged_text = nltk.pos_tag(words)
-        fd = nltk.FreqDist(tag for (word, tag) in tagged_text)
-        for pos in pos_list: 
-            self.features[pos] = fd.get(pos)
+        # for common_word in word_features: 
+        #     if common_word in set(words): 
+        #         self.features[common_word] = True 
+        #     else: 
+        #         self.features[common_word] = False 
+        
+        # Parts of Speech as features 
+        # pos_list = ['NN', 'NNP', 'DT', 'IN', 'JJ', 'NNS', 'CC', 'MD']
+        # tagged_text = nltk.pos_tag(words)
+        # fd = nltk.FreqDist(tag for (word, tag) in tagged_text)
+        # for pos in pos_list: 
+        #     self.features[pos] = fd.get(pos)
      
     def __repr__(self):
         return("Label: " + str(self.label) + 
