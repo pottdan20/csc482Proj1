@@ -31,12 +31,12 @@ class TopicClassifier:
     def set_features(self): 
         training_documents = data_setup_and_fetch.fetch_part1_document_training()        
         all_words = []
-        # Get all words from training documents, and use most common 1000 as features 
+        # Get all words from training documents, and use most common 800 as features 
         for doc in training_documents:
             words = self.get_tokens(doc[1])
             all_words += words            
         freq_dist = nltk.FreqDist(all_words)         
-        common_words = freq_dist.most_common(500) 
+        common_words = freq_dist.most_common(800) 
         for (word, count) in common_words: 
             self.word_features.add(word)
     
